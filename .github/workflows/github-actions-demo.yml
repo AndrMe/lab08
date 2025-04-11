@@ -15,4 +15,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
+      - run: echo "trying cmake without install"
+      - run: cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install
+      - run: cmake --build _build
+      - run: cmake --build _build --target install
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
