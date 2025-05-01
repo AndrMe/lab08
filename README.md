@@ -1,5 +1,5 @@
 
 
-Repository for tutorial of lab2
+Repository for tutorial of lab6
 ---
 ***TEST***
