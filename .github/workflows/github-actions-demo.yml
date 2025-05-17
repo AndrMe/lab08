@@ -17,11 +17,6 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "trying cmake without install"
-      - run: cmake -H. -B_build -DCMAKE_INSTALL_PREFIX=_install -DBUILD_TESTS=ON
-      - run: cmake --build _build
-      - run: cmake --build _build --target install
-      - name: Testing
-        run: cmake --build _build --target test -- ARGS=--verbose
-
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: Docker
+        run: docker build -t logger
+ 
